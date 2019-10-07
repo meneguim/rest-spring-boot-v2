@@ -1,0 +1,52 @@
+package br.com.erudio;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.erudio.exception.UnsupportedMathOperationException;
+
+@RestController
+public class MathController {
+	
+	@RequestMapping(value = "/calc/{operationType}/{numberOne}/{numberTwo}", method=RequestMethod.GET)
+	public Double calc( @PathVariable("operationType") String operationType,
+						@PathVariable("numberOne") String numberOne, 
+						@PathVariable("numberTwo") String numberTwo) throws Exception {
+		if (!operationType(operationType)) {
+			throw new UnsupportedMathOperationException("O tipo da opeção deve ser especificada. sum, subtraction, division, multiplication or square");
+		}
+		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+			throw new UnsupportedMathOperationException("Favor informar um valor numérico");
+		}
+		Double sum = convertToDouble(numberOne) + convertToDouble(numberTwo);
+		return sum;		
+	}
+	
+	private boolean operationType(String operationType) {
+		if (operationType == null) return false;
+		if (operationType.toUpperCase() == "SUM" ||
+			operationType.toUpperCase() == "SUBTRACTION" ||
+			operationType.toUpperCase() == "DIVISION" ||
+			operationType.toUpperCase() == "MULTIPLICATION" ||
+			operationType.toUpperCase() == "SQUARE" ||
+			operationType.toUpperCase() == "AVERAGE") {
+			return true;
+		};
+		return false;
+	}
+	
+	private boolean isNumeric(String strNumber) {
+		if(strNumber == null) return false;
+		String number = strNumber.replace(",", ".");
+		return number.matches("[-+]?[0-9]*\\.?[0-9]+");
+	}
+
+	private Double convertToDouble(String strNumber) {
+		String number = strNumber.replace(",", ".");
+		if (isNumeric(number)) return Double.parseDouble(number);
+		return 0D;
+	}
+	
+}

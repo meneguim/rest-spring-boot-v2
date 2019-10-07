@@ -1,0 +1,20 @@
+package br.com.erudio;
+
+import br.com.erudio.exception.UnsupportedMathOperationException;
+
+public class Calc implements ICalc{
+	
+	@Override
+	public Double calc(String operationType, Double n1, Double n2) {
+		validaParam (n1, n2);
+		return null;
+	}
+	
+	private static void validaParam (Double n1, Double n2) {
+		if (n1 == null || n2 == null) {
+			throw new UnsupportedMathOperationException("O primeiro e segundo numero devem ser especificados"); 
+		}
+	}
+	
+	
+}
