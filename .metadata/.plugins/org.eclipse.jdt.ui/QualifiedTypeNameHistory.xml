@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler"/>
     <fullyQualifiedTypeName name="org.springframework.web.context.request.WebRequest"/>
-    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="br.com.erudio.exception.ExceptionResponse"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
@@ -27,7 +26,6 @@
     <fullyQualifiedTypeName name="br.com.erudio.model.Person"/>
     <fullyQualifiedTypeName name="java.awt.PageAttributes.MediaType"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.domain.EntityScan"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -42,4 +40,17 @@
     <fullyQualifiedTypeName name="br.com.erudio.repository.PersonRepository"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="br.com.erudio.exception.ResourceNotFoundException"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.Assert"/>
+    <fullyQualifiedTypeName name="org.assertj.core.api.Assert"/>
+    <fullyQualifiedTypeName name="com.github.dozermapper.core.DozerBeanMapper"/>
+    <fullyQualifiedTypeName name="com.github.dozermapper.core.DozerBeanMapperBuilder"/>
+    <fullyQualifiedTypeName name="com.github.dozermapper.core.Mapper"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.Assert"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.erudio.converter.DozerConverter"/>
 </qualifiedTypeNameHistroy>
