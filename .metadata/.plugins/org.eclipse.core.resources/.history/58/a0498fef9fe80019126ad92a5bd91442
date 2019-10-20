@@ -1,5 +1,0 @@
-package br.com.erudio;
-
-public interface ICalc {
-	Double calc (String operationType, Double n1, Double n2);
-}
