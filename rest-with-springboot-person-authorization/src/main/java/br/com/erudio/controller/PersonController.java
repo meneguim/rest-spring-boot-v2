@@ -39,6 +39,9 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
+	@Autowired
+	private PagedResourcesAssembler<PersonVO> assembler;
+	
 	@ApiOperation(value = "Busca pessoa por ID")
 	@GetMapping(value = "/{id}",produces = {"application/json","application/xml","application/x-yaml"})
 	public PersonVO findById( @PathVariable("id") Long id) 	{
@@ -49,19 +52,54 @@ public class PersonController {
 	
 	@ApiOperation(value = "Busca todas as pessoas")
 	@GetMapping(produces = {"application/json","application/xml","application/x-yaml"})
-	public ResponseEntity<PagedResources<PersonVO>> findAll(
+	public ResponseEntity<?> findAll(
 			@RequestParam(value="page", defaultValue = "0") int page,
 			@RequestParam(value="limit", defaultValue = "15") int limit,
-			@RequestParam(value="direction", defaultValue = "asc") String direction, 
-			PagedResourcesAssembler assembler) {
+			@RequestParam(value="direction", defaultValue = "asc") String direction) {
 		
 		var sortDirection = "desc".equalsIgnoreCase(direction) ? Direction.DESC : Direction.ASC;
 		
 		Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection,"firstName"));
 		
 		Page<PersonVO> persons = personService.findAll(pageable);
-		persons.stream().forEach(p -> p.add(linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel()));
-		return new ResponseEntity<>(assembler.toResource(persons), HttpStatus.OK);
+		
+		persons
+			.stream()
+			.forEach(p -> p.add(
+					linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel()
+				)
+			);
+		
+		PagedResources<?> resources = assembler.toResource(persons);
+		
+		return new ResponseEntity<>(resources, HttpStatus.OK);
+	}
+	
+	@ApiOperation(value = "Busca pessoas por partes de nomes")
+	@GetMapping(value = "/findPersonByName/{firstName}",
+				produces = {"application/json","application/xml","application/x-yaml"})
+	public ResponseEntity<?> findPersonByName(
+			@PathVariable("firstName") String firstName,
+			@RequestParam(value="page", defaultValue = "0") int page,
+			@RequestParam(value="limit", defaultValue = "15") int limit,
+			@RequestParam(value="direction", defaultValue = "asc") String direction) {
+		
+		var sortDirection = "desc".equalsIgnoreCase(direction) ? Direction.DESC : Direction.ASC;
+		
+		Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection,"firstName"));
+		
+		Page<PersonVO> persons = personService.findPersonByName(firstName, pageable);
+		
+		persons
+			.stream()
+			.forEach(p -> p.add(
+					linkTo(methodOn(PersonController.class).findById(p.getKey()))
+					.withSelfRel()
+					)
+				);
+		PagedResources<?> resources = assembler.toResource(persons);
+		
+		return new ResponseEntity<>(resources, HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "Nova pessoa")
