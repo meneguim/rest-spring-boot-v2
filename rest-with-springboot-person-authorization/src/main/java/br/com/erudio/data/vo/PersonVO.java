@@ -2,13 +2,15 @@ package br.com.erudio.data.vo;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+
 import org.springframework.hateoas.ResourceSupport;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 
-@JsonPropertyOrder({"id","firstName","lastName","address","gender"})
+@JsonPropertyOrder({"id","firstName","lastName","address","gender","enable"})
 public class PersonVO extends ResourceSupport implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -20,16 +22,18 @@ public class PersonVO extends ResourceSupport implements Serializable{
 	private String lastName;
 	private String address;
 	private String gender;
+	private Boolean enable;
 	
 	public PersonVO () {
 	}
 	
-	public PersonVO(Long id, String firstName, String lastName, String address, String gender) {
+	public PersonVO(Long id, String firstName, String lastName, String address, String gender, Boolean enable) {
 		this.key = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
 		this.gender = gender;
+		this.enable = enable;
 	}
 
 	public Long getKey() {
@@ -72,11 +76,20 @@ public class PersonVO extends ResourceSupport implements Serializable{
 		this.gender = gender;
 	}
 
+	public Boolean getEnable() {
+		return enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((enable == null) ? 0 : enable.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((key == null) ? 0 : key.hashCode());
@@ -97,6 +110,11 @@ public class PersonVO extends ResourceSupport implements Serializable{
 			if (other.address != null)
 				return false;
 		} else if (!address.equals(other.address))
+			return false;
+		if (enable == null) {
+			if (other.enable != null)
+				return false;
+		} else if (!enable.equals(other.enable))
 			return false;
 		if (firstName == null) {
 			if (other.firstName != null)
@@ -119,5 +137,5 @@ public class PersonVO extends ResourceSupport implements Serializable{
 		} else if (!lastName.equals(other.lastName))
 			return false;
 		return true;
-	}
+	}	
 }

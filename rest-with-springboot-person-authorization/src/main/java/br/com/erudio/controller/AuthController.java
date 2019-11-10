@@ -20,8 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.erudio.repository.UserRepository;
 import br.com.erudio.security.AccountCredentialsVO;
 import br.com.erudio.security.jwt.JwtTokenProvider;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+@Api(value = "Autenticação Endpoint", 
+	description = "Descrição do Endpoint Autenticação", 
+	tags = {"AuthEndpoint"})
 @RestController
 @RequestMapping("/auth")
 public class AuthController {

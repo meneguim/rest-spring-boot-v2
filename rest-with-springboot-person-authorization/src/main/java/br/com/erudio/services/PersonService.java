@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.erudio.data.model.Person;
 import br.com.erudio.data.vo.PersonVO;
@@ -43,6 +44,13 @@ public class PersonService {
 		
 		var vo = DozerConverter.parseObject(repo.save(entity), PersonVO.class);
 		return vo;
+	}
+	
+	@Transactional
+	public PersonVO disablePerson(Long id) {
+		repo.disablePerson(id);
+		var entity = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Não existe registros para o ID: " + id));
+		return DozerConverter.parseObject(entity, PersonVO.class);
 	}
 	
 	public void delete(Long id) {
