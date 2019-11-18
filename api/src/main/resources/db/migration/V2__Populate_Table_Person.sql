@@ -1,0 +1,16 @@
+INSERT INTO `person` 
+VALUES (2,
+		'Rua leopoldino José de Camargo, 703 - Casa 2 - Parque Araribá - São Paulo',
+		'Cristina',
+		'Feminino',
+		'Fraga Meneguim'),
+	   (3,
+	   'Rua leopoldino José de Camargo, 703 - Casa 2 - Parque Araribá - São Paulo',
+	   'Alan',
+	   'Masculino',
+	   'Fernandes Meneguim'),
+	   (4,
+	   'Rua leopoldino José de Camargo, 701 Parque Araribá - São Paulo',
+	   'Marta',
+	   'Feminino',
+	   'Fernandes Meneguim');

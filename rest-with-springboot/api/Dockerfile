@@ -1,0 +1,3 @@
+FROM maven:3.6.2-jdk-13
+WORKDIR /api
+
