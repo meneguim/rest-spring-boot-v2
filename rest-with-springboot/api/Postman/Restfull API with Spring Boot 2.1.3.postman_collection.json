@@ -1,0 +1,818 @@
+{
+	"id": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+	"name": "Restfull API with Spring Boot 2.1.3",
+	"description": "Curso Rest",
+	"order": [],
+	"folders": [
+		{
+			"name": "File",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"order": [
+				"df03c803-eab7-53f8-307b-730e1da79220",
+				"87fe8e06-e31a-47f8-5cfa-848fd4c16414",
+				"5a8490b5-5b00-6114-65e7-419bcd818b7e"
+			],
+			"owner": "6621761",
+			"folders_order": [],
+			"id": "956456f5-ea1c-bcf9-d87d-f5265775b493"
+		},
+		{
+			"name": "Login",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"order": [
+				"edae8102-674d-ef3f-bbe4-8c4088d2b963"
+			],
+			"owner": "6621761",
+			"folders_order": [],
+			"id": "34056d55-8e34-07ea-3ed2-51c66867640f"
+		},
+		{
+			"id": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"name": "book",
+			"description": "Folder for book",
+			"order": [
+				"37c209fb-025b-6427-4fbc-6f046876cfc0",
+				"879adc4d-6818-d0be-32a3-469dbe109791",
+				"7ca36ef9-9c9c-b60d-97c1-6ec40f3c5c4d",
+				"c51ef8f1-e141-c276-ed38-3c54cbe1d204",
+				"640ffaf3-07e3-c22a-a82c-98519b7d3953",
+				"5f7a0822-a30f-4822-9ad0-04aa91d0a52e"
+			],
+			"owner": "6621761",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"folders_order": []
+		},
+		{
+			"id": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"name": "person",
+			"description": "Folder for person",
+			"order": [
+				"ef38317b-9ca9-cc1b-43ec-91f7b0fe6115",
+				"f780b9d9-71a7-c540-6747-19cd5acd657b",
+				"5509a316-91c0-88ab-cb9a-0f6bb52d4da9",
+				"1c8d6a3d-7acc-d3e1-26f4-a6e41d7db885",
+				"1649235e-baf5-f717-8690-d9dbcb5d2b7e",
+				"7b6254a2-5471-e0fa-6e36-21788e78dcfd",
+				"79d828ac-7801-28d2-758a-f9f3b34d2aec"
+			],
+			"owner": "6621761",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"folders_order": []
+		}
+	],
+	"folders_order": [
+		"34056d55-8e34-07ea-3ed2-51c66867640f",
+		"b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+		"3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+		"956456f5-ea1c-bcf9-d87d-f5265775b493"
+	],
+	"timestamp": 1413302258635,
+	"owner": "6621761",
+	"public": false,
+	"requests": [
+		{
+			"id": "1649235e-baf5-f717-8690-d9dbcb5d2b7e",
+			"headers": "Accept: application/xml, application/json, application/x-yaml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml, application/json, application/x-yaml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person/:id",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": "{{id}}"
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "id",
+					"value": "{{id}}"
+				}
+			],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410668415,
+			"name": "Busca pessoa por ID",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "1c8d6a3d-7acc-d3e1-26f4-a6e41d7db885",
+			"headers": "Accept: {{applicationType}}\nContent-Type: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574007479011,
+			"name": "Nova pessoa",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": "            {\n                \"id\": 1000,\n                \"firstName\": \"Abbe\",\n                \"lastName\": \"Sigfrid\",\n                \"address\": \"42194 Pennsylvania Trail\",\n                \"gender\": \"Male\",\n                \"enable\": true,\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/person/946\"\n                    }\n                }\n            }"
+		},
+		{
+			"id": "37c209fb-025b-6427-4fbc-6f046876cfc0",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book?page=0&limit=2&direction=asc",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "direction",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573417445688,
+			"name": "Busca todos os livro",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "5509a316-91c0-88ab-cb9a-0f6bb52d4da9",
+			"headers": "Accept: application/xml, application/json, application/x-yaml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml, application/json, application/x-yaml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410657768,
+			"name": "Atualização de pessoa",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": "person"
+		},
+		{
+			"id": "5a8490b5-5b00-6114-65e7-419bcd818b7e",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/file/downloadFile/F20191114C.pdf",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574016452977,
+			"name": "Busca de arquivo",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "5f7a0822-a30f-4822-9ad0-04aa91d0a52e",
+			"headers": "Accept: */*\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book/:id",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": "{{id}}"
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "id",
+					"value": "{{id}}"
+				}
+			],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410643755,
+			"name": "Exclusão de livro",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "640ffaf3-07e3-c22a-a82c-98519b7d3953",
+			"headers": "Accept: application/xml, application/json, application/x-yaml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml, application/json, application/x-yaml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book/:id",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": "{{id}}"
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "id",
+					"value": "{{id}}"
+				}
+			],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410635950,
+			"name": "Busca livro por ID",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "79d828ac-7801-28d2-758a-f9f3b34d2aec",
+			"headers": "Accept: */*\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person/:id",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": "{{id}}"
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "id",
+					"value": "{{id}}"
+				}
+			],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410675351,
+			"name": "Exclusão de pessoa",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "7b6254a2-5471-e0fa-6e36-21788e78dcfd",
+			"headers": "Accept: application/json\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{host}}/person/2",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573414275924,
+			"name": "Inativação Pessoa",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "7ca36ef9-9c9c-b60d-97c1-6ec40f3c5c4d",
+			"headers": "Accept: application/xml, application/json, application/x-yaml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml, application/json, application/x-yaml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410611352,
+			"name": "Atualização de livro",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": "book"
+		},
+		{
+			"id": "879adc4d-6818-d0be-32a3-469dbe109791",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book/findBookByName/extra?page=0&limit=2&direction=asc",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "direction",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573428093413,
+			"name": "Busca livro por parte do título",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "87fe8e06-e31a-47f8-5cfa-848fd4c16414",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/file/uploadMultipleFiles",
+			"folder": "956456f5-ea1c-bcf9-d87d-f5265775b493",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "files",
+					"value": "F20191114C.pdf",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574016317192,
+			"name": "Enviar Multipos Arquivos",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "c51ef8f1-e141-c276-ed38-3c54cbe1d204",
+			"headers": "Accept: application/xml, application/json, application/x-yaml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml, application/json, application/x-yaml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/book",
+			"folder": "b8712862-b8ac-1abf-acf9-571e5bd94b8e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573410628763,
+			"name": "Cria novo livro",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": "book"
+		},
+		{
+			"id": "df03c803-eab7-53f8-307b-730e1da79220",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/file/uploadFile",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "file",
+					"value": "F20191114C.pdf",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574016448254,
+			"name": "Enviar Arquivo",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "edae8102-674d-ef3f-bbe4-8c4088d2b963",
+			"headers": "Accept: {{applicationType}}\nContent-Type: {{applicationType}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/auth/signin",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "if (responseCode.code >= 200 && responseCode.code <= 299){\n    var jsonData = JSON.parse(responseBody);\n    postman.setEnvironmentVariable('bearer_token',jsonData.token);\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573416517532,
+			"name": "Autenticação",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\":{{user}},\n\t\"password\":{{password}}\n}"
+		},
+		{
+			"id": "ef38317b-9ca9-cc1b-43ec-91f7b0fe6115",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person?page=0&limit=2&direction=asc",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "direction",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573416514552,
+			"name": "Busca todas as pessoas",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		},
+		{
+			"id": "f780b9d9-71a7-c540-6747-19cd5acd657b",
+			"headers": "Accept: {{applicationType}}\nAuthorization: Bearer {{bearer_token}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "{{applicationType}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{bearer_token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}/person/findPersonByName/al?page=0&limit=6&direction=asc",
+			"folder": "3d4f2dbe-490b-e6d6-743f-5ee1131b3592",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "6",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "direction",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574004358058,
+			"name": "Busca pessoas por parte do nome",
+			"description": "",
+			"collectionId": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+			"responses": []
+		}
+	]
+}

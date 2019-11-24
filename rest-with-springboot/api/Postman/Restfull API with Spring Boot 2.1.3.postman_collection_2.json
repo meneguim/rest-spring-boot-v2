@@ -1,0 +1,640 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Restfull API with Spring Boot 2.1.3",
+		"_postman_id": "7e089f5a-5842-7d82-e039-d037294ef5e7",
+		"description": "Curso Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "Autenticação",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if (responseCode.code >= 200 && responseCode.code <= 299){",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable('bearer_token',jsonData.token);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/auth/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{applicationType}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":{{user}},\n\t\"password\":{{password}}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"description": "Folder for book",
+			"item": [
+				{
+					"name": "Busca todos os livro",
+					"request": {
+						"url": {
+							"raw": "{{host}}/book?page=0&limit=2&direction=asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "direction",
+									"value": "asc",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca livro por parte do título",
+					"request": {
+						"url": {
+							"raw": "{{host}}/book/findBookByName/extra?page=0&limit=2&direction=asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"book",
+								"findBookByName",
+								"extra"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "direction",
+									"value": "asc",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de livro",
+					"request": {
+						"url": "{{host}}/book",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml, application/json, application/x-yaml",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "book"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cria novo livro",
+					"request": {
+						"url": "{{host}}/book",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml, application/json, application/x-yaml",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "book"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca livro por ID",
+					"request": {
+						"url": {
+							"raw": "{{host}}/book/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"book",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"description": "",
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml, application/json, application/x-yaml",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Exclusão de livro",
+					"request": {
+						"url": {
+							"raw": "{{host}}/book/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"book",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"description": "",
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "person",
+			"description": "Folder for person",
+			"item": [
+				{
+					"name": "Busca todas as pessoas",
+					"request": {
+						"url": {
+							"raw": "{{host}}/person?page=0&limit=2&direction=asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "direction",
+									"value": "asc",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca pessoas por parte do nome",
+					"request": {
+						"url": {
+							"raw": "{{host}}/person/findPersonByName/al?page=0&limit=6&direction=asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"findPersonByName",
+								"al"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "6",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "direction",
+									"value": "asc",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de pessoa",
+					"request": {
+						"url": "{{host}}/person",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml, application/json, application/x-yaml",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "person"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nova pessoa",
+					"request": {
+						"url": "{{host}}/person",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "            {\n                \"id\": 1000,\n                \"firstName\": \"Abbe\",\n                \"lastName\": \"Sigfrid\",\n                \"address\": \"42194 Pennsylvania Trail\",\n                \"gender\": \"Male\",\n                \"enable\": true,\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/person/946\"\n                    }\n                }\n            }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca pessoa por ID",
+					"request": {
+						"url": {
+							"raw": "{{host}}/person/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"description": "",
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml, application/json, application/x-yaml",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Inativação Pessoa",
+					"request": {
+						"url": "{{host}}/person/2",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							},
+							{
+								"key": "",
+								"value": "",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Exclusão de pessoa",
+					"request": {
+						"url": {
+							"raw": "{{host}}/person/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"description": "",
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"description": "",
+			"item": [
+				{
+					"name": "Enviar Arquivo",
+					"request": {
+						"url": "{{host}}/file/uploadFile",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "",
+									"type": "file",
+									"src": "F20191114C.pdf"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Enviar Multipos Arquivos",
+					"request": {
+						"url": "{{host}}/file/uploadMultipleFiles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"description": "",
+									"type": "file",
+									"src": "F20191114C.pdf"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca de arquivo",
+					"request": {
+						"url": "{{host}}/file/downloadFile/F20191114C.pdf",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{applicationType}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
