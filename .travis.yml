@@ -1,7 +1,7 @@
 language: bash
 services: docker
 before_install:
- - cd rest-with-springboot\ Docker/
+ - cd rest-with-springboot
  - echo "Estamos na pasta do docker"
 script:
  - docker-compose build
